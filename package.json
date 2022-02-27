@@ -35,6 +35,7 @@
         "watch": "lwc-services watch"
     },
     "devDependencies": {
+        "@lwc/synthetic-shadow": "^2.10.0",
         "@salesforce-ux/design-system": "^2.17.5",
         "eslint": "^7.32.0",
         "eslint-plugin-inclusive-language": "^2.2.0",
