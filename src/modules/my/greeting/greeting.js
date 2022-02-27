@@ -1,4 +1,4 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, track, api } from 'lwc';
 
 const greetings = [
     'Hello',
@@ -11,8 +11,7 @@ const greetings = [
     'ጤና ይስጥልኝ',
     'Ciao',
     'नमस्ते',
-    '안녕하세요',
-    'مرحبا'
+    '안녕하세요'
 ];
 const SPEED_CLASS_MAP = {
     slow: 'fade-slow',
@@ -22,13 +21,13 @@ const SPEED_CLASS_MAP = {
 const DEFAULT_SPEED = 'medium';
 
 export default class Greeting extends LightningElement {
-    animationSpeed = DEFAULT_SPEED;
-    index = 0;
-    isAnimating = true;
+    @track animationSpeed = DEFAULT_SPEED;
+    @track index = 0;
+    @track isAnimating = true;
 
     @api
     set speed(value) {
-        if (SPEED_CLASS_MAP[value]) {
+        if (SPEED_CLASS_MAP.hasOwnProperty(value)) {
             this.animationSpeed = value;
         } else {
             this.animationSpeed = DEFAULT_SPEED;
