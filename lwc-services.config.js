@@ -3,8 +3,11 @@
 module.exports = {
     resources: [
         { from: 'src/resources/', to: 'dist/resources/' },
-        { from: 'git remote add origin https://github.com/bladexr8/LWC.OSS.git',
+        { from: 'node_modules/@salesforce-ux/design-system/assets',
           to: 'src/SLDS'
+        },
+        { from: 'node_modules/@salesforce-ux/design-system/assets',
+          to: 'dist/SLDS'
         }
     ]
 };
